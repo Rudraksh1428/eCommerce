@@ -19,7 +19,7 @@ const Products = () => {
           placeholder="Search products..."
           className="w-full max-w-md px-4 py-2.5 border border-gray-300
                      rounded-lg outline-none focus:ring-2
-                     focus:ring-blue-500 focus:border-blue-500"
+                     focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500"
         />
       </div>
 
