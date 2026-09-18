@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ArrowRight, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import products from "../data/Data";
+import Categories from "../components/Categories";
 
 const Home = () => {
   const [current, setCurrent] = useState(0);
@@ -72,6 +73,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+      <Categories />
     </div>
   );
 };
