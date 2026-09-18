@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import products from "../data/Data";
 import ProductCard from "../components/ProductCard";
@@ -7,6 +7,10 @@ const Products = () => {
   const [searchParams] = useSearchParams();
 
   const category = searchParams.get("category");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [category]);
 
   const filteredProducts = category
     ? products.filter((product) => product.category === category)
