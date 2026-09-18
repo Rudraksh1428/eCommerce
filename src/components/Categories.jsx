@@ -4,62 +4,74 @@ import { Link } from "react-router-dom";
 const categories = [
   {
     name: "Shoes",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
+    image:
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
   },
   {
     name: "Electronics",
-    image: "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=500",
+    image:
+      "https://images.unsplash.com/photo-1498049794561-7780e7231661",
   },
   {
-    name: "Clothing",
-    image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=500",
+    name: "Fashion",
+    image:
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
   },
   {
     name: "Accessories",
-    image: "https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?w=500",
+    image:
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
+  },
+  {
+    name: "Home & Living",
+    image:
+      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7",
   },
 ];
 
 const Categories = () => {
   return (
-    <section className="w-full px-6 md:px-12 lg:px-16 py-10">
-      {/* Heading */}
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <p className="text-2xl md:text-3xl font-bold">
-            Explore Various Categories
-          </p>
+    <section className="px-6 md:px-12 py-10">
 
-          <p className="text-gray-500 text-sm mt-1">
-            Find what you are looking for
-          </p>
-        </div>
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-2xl font-bold">
+          Explore Various Categories
+        </h2>
 
-        <Link to="/products" className="text-sm font-semibold hover:underline">
+        <Link
+          to="/products"
+          className="text-sm font-semibold hover:underline"
+        >
           See all
         </Link>
       </div>
 
-      {/* Categories */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-5">
+
         {categories.map((category) => (
           <Link
-            to={`/products?category=${category.name}`}
             key={category.name}
+            to={`/products?category=${encodeURIComponent(category.name)}`}
             className="group text-center"
           >
-            <div className="w-full h-44 overflow-hidden rounded-xl bg-gray-100">
+            <div className="h-40 overflow-hidden rounded-xl bg-gray-100">
+
               <img
                 src={category.image}
                 alt={category.name}
-                className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
+
             </div>
 
-            <p className="mt-3 text-lg font-semibold">{category.name}</p>
+            <p className="mt-3 font-semibold">
+              {category.name}
+            </p>
           </Link>
         ))}
+
       </div>
+
     </section>
   );
 };

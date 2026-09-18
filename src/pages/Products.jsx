@@ -1,59 +1,42 @@
 import React from "react";
-import ProductCard from "../components/ProductCard";
+import { useSearchParams } from "react-router-dom";
 import products from "../data/Data";
+import ProductCard from "../components/ProductCard";
 
 const Products = () => {
+  const [searchParams] = useSearchParams();
+
+  const category = searchParams.get("category");
+
+  const filteredProducts = category
+    ? products.filter((product) => product.category === category)
+    : products;
+
   return (
-    <div className="max-w-7xl mx-auto px-6 py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">All Products</h1>
+    <div className="px-6 md:px-12 lg:px-16 py-10">
+      <div className="flex items-center justify-between mb-8">
+        <div>
+          <h1 className="text-3xl font-bold">{category || "All Products"}</h1>
 
-        <p className="mt-2 text-gray-500">
-          Showing {products.length} curated essentials
-        </p>
+          <p className="text-gray-500 mt-1">
+            {filteredProducts.length} products found
+          </p>
+        </div>
       </div>
 
-      <div className="mb-6">
-        <input
-          type="text"
-          placeholder="Search products..."
-          className="w-full max-w-md px-4 py-2.5 border border-gray-300
-                     rounded-lg outline-none focus:ring-2
-                     focus:ring-blue-500 focus:border-blue-500 hover:border-blue-500"
-        />
-      </div>
+      {filteredProducts.length > 0 ? (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {filteredProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      ) : (
+        <div className="text-center py-20">
+          <h2 className="text-xl font-semibold">No products found</h2>
 
-      <div className="flex flex-wrap items-center gap-3">
-        <button className="px-4 py-2 rounded-full bg-blue-600 text-white">
-          All
-        </button>
-
-        <button className="px-4 py-2 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200">
-          Electronics
-        </button>
-
-        <button className="px-4 py-2 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200">
-          Fashion
-        </button>
-
-        <button className="px-4 py-2 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200">
-          Shoes
-        </button>
-
-        <button className="px-4 py-2 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200">
-          Accessories
-        </button>
-
-        <button className="px-4 py-2 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200">
-          Home & Living
-        </button>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-8">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
+          <p className="text-gray-500 mt-2">Try selecting another category.</p>
+        </div>
+      )}
     </div>
   );
 };
