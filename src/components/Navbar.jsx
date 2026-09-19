@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { ShoppingCart, Heart, User } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    if (search.trim() !== "") {
+      navigate(`/products?search=${encodeURIComponent(search)}`);
+    } else {
+      navigate("/products");
+    }
+  };
+
   return (
     <nav className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -23,13 +36,17 @@ const Navbar = () => {
         </div>
 
         <div className="flex-1 max-w-md mx-8">
-          <input
-            type="text"
-            placeholder="Search Product"
-            className="w-full px-4 py-2.5 rounded-lg border border-gray-300
-                       outline-none focus:ring-2 focus:ring-blue-500
-                       focus:border-blue-500 hover:border-blue-500"
-          />
+          <form onSubmit={handleSearch}>
+            <input
+              type="text"
+              placeholder="Search Product"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full px-4 py-2.5 rounded-lg border border-gray-300
+                         outline-none focus:ring-2 focus:ring-blue-500
+                         focus:border-blue-500 hover:border-blue-500"
+            />
+          </form>
         </div>
 
         <div className="flex items-center gap-6">
