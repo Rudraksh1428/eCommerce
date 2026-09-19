@@ -9,7 +9,6 @@ const BestSellers = () => {
 
   return (
     <section className="px-6 md:px-12 lg:px-16 py-10">
-
       <div className="flex items-center justify-between mb-7">
         <div>
           <h2 className="text-2xl md:text-3xl font-bold">
@@ -30,7 +29,6 @@ const BestSellers = () => {
       </div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-
         {bestSellers.map((product) => (
           <Link
             key={product.id}
@@ -41,7 +39,7 @@ const BestSellers = () => {
               <img
                 src={product.img}
                 alt={product.description}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
               />
             </div>
 
@@ -56,7 +54,6 @@ const BestSellers = () => {
 
               <div className="flex items-center gap-1 mt-2">
                 <span className="text-yellow-500">★</span>
-
                 <span className="text-sm font-medium">
                   {product.rating}
                 </span>
@@ -68,7 +65,6 @@ const BestSellers = () => {
             </div>
           </Link>
         ))}
-
       </div>
     </section>
   );

@@ -3,6 +3,7 @@ import { ArrowRight, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import products from "../data/Data";
 import Categories from "../components/Categories";
+import BestSellers from "../components/BestSellers";
 
 const Home = () => {
   const [current, setCurrent] = useState(0);
@@ -74,6 +75,7 @@ const Home = () => {
         </div>
       </div>
       <Categories />
+      <BestSellers />
     </div>
   );
 };
