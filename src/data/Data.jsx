@@ -41,7 +41,7 @@ const products = [
   },
   {
     id: 6,
-    img: "https://images.unsplash.com/photo-1585386959984-a41552231693",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0ebsmflj_g-ZHGeXxNPN8hhX-G1iRNN-eFVjU2BsF1A&s=10",
     category: "Electronics",
     description: "Smartphone",
     rating: 4.8,
@@ -73,7 +73,7 @@ const products = [
   },
   {
     id: 10,
-    img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYl_Ccmt8j54DTiRxZIh8IXyR1j0qtsLSwCnfsp1ldOA&s=10",
     category: "Shoes",
     description: "Sports Running Shoes",
     rating: 4.7,
@@ -164,7 +164,7 @@ const products = [
 
   {
     id: 21,
-    img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8hivPs_xaHzdL8322FMBxJ2wJpNAB48MYfz8DhuWlfA&s=10",
     category: "Shoes",
     description: "White Casual Sneakers",
     rating: 4.6,
@@ -180,7 +180,7 @@ const products = [
   },
   {
     id: 23,
-    img: "https://images.unsplash.com/photo-1496150705330-3e9b7a1a0b91",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTJBkhlvDdu37ZXtGRtHtqJJI6PsMvOAAJCxaOc3Be3w&s",
     category: "Electronics",
     description: "Bluetooth Speaker",
     rating: 4.5,
@@ -212,7 +212,7 @@ const products = [
   },
   {
     id: 27,
-    img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7ytNRStJVENRfKlHHuOz_cRTzK-ZS09ITbQWsupwz8A&s=10",
     category: "Shoes",
     description: "Premium Sports Shoes",
     rating: 4.8,
@@ -220,7 +220,7 @@ const products = [
   },
   {
     id: 28,
-    img: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a45",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRACyXw5N7dX3aM-YGIcMjVULufbfQMLTstN-4Y9hjGDw&s=10",
     category: "Electronics",
     description: "Wireless Mouse",
     rating: 4.5,
@@ -247,7 +247,7 @@ const products = [
 
   {
     id: 31,
-    img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQINa6UcEnzqKsf0lQpYR1JlcMtCw88nJ3hxvpOMjun_w&s=10",
     category: "Shoes",
     description: "Everyday Walking Shoes",
     rating: 4.3,
@@ -287,7 +287,7 @@ const products = [
   },
   {
     id: 36,
-    img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfNW4ni29V6InWT9LKOvOX43KndLbPmLn8cEjWLH4-zA&s=10",
     category: "Shoes",
     description: "High Performance Trainers",
     rating: 4.7,
@@ -295,7 +295,7 @@ const products = [
   },
   {
     id: 37,
-    img: "https://images.unsplash.com/photo-1600087626127-ecf3e9d4d8b6",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVXuqcNXQ0y7pc6sQl_1gyZPpSVkxXeuuSEcjlc_xrUw&s",
     category: "Electronics",
     description: "Smart Watch",
     rating: 4.7,
@@ -330,7 +330,7 @@ const products = [
 
   {
     id: 41,
-    img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQcMLH8sjyb5OTccYtv4g5aiARQTQpBZBm6mZ4wNL86A&s=10",
     category: "Shoes",
     description: "Classic Black Sneakers",
     rating: 4.6,
@@ -370,7 +370,7 @@ const products = [
   },
   {
     id: 46,
-    img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGm0KHdByWwsEgrid4cWXbGADolYXKsdSSiX9BWamIzQ&s=10",
     category: "Shoes",
     description: "Lightweight Running Shoes",
     rating: 4.8,
@@ -413,7 +413,7 @@ const products = [
 
   {
     id: 51,
-    img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSslHDqTJdKvH5nqVvZj8A81DalC-iUvu5_GZdfY_QUwg&s",
     category: "Shoes",
     description: "Premium Casual Sneakers",
     rating: 4.7,
@@ -421,7 +421,7 @@ const products = [
   },
   {
     id: 52,
-    img: "https://images.unsplash.com/photo-1517336714739-489689fd1ca8",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNSrMFQfAI1tzvg3AbH6Vj5vcWMjNDLwrZdDQG2-SnBw&s=10",
     category: "Electronics",
     description: "Laptop Computer",
     rating: 4.8,
@@ -453,7 +453,7 @@ const products = [
   },
   {
     id: 56,
-    img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQogNV4D0EBmkU21eOFqh0otoP7WzpffzwBymbw316WHQ&s=10",
     category: "Shoes",
     description: "Urban Street Sneakers",
     rating: 4.6,
@@ -461,7 +461,7 @@ const products = [
   },
   {
     id: 57,
-    img: "https://images.unsplash.com/photo-1609592424784-2a2e6a8e5d4b",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_v8gp3yl70lnGiKrp7QL_z8vB6gQnbtVtKcwI9c3R0A&s=10",
     category: "Electronics",
     description: "Portable Power Bank",
     rating: 4.5,
@@ -492,6 +492,5 @@ const products = [
     price: 1999,
   },
 ];
-
 
 export default products;

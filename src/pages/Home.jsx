@@ -23,9 +23,9 @@ const Home = () => {
           </div>
 
           <div className="rounded-md bg-green-700 px-3 py-2 text-xs font-bold leading-tight">
-            UP TO 45%
+            Best Prices
             <br />
-            OFF
+            Shop now
           </div>
         </div>
 
