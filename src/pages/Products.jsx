@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import products from "../data/Data";
 import ProductCard from "../components/ProductCard";
+import { useWishlist } from "../context/WishListContext";
 
 const Products = () => {
   const [searchParams] = useSearchParams();
@@ -9,7 +10,7 @@ const Products = () => {
   const category = searchParams.get("category");
   const search = searchParams.get("search");
 
-  const [wishlist, setWishlist] = useState([]);
+  const { toggleWishlist, isWishlisted } = useWishlist();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -31,14 +32,6 @@ const Products = () => {
     );
   }
 
-  const toggleWishlist = (productId) => {
-    setWishlist((prev) =>
-      prev.includes(productId)
-        ? prev.filter((id) => id !== productId)
-        : [...prev, productId]
-    );
-  };
-
   return (
     <div className="px-6 md:px-12 lg:px-16 py-10">
       <div className="flex items-center justify-between mb-8">
@@ -58,7 +51,7 @@ const Products = () => {
       {filteredProducts.length > 0 ? (
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {filteredProducts.map((product) => {
-            const isWishlisted = wishlist.includes(product.id);
+            const wishlisted = isWishlisted(product.id);
 
             return (
               <div
@@ -72,18 +65,18 @@ const Products = () => {
                 <button
                   onClick={(e) => {
                     e.preventDefault();
-                    toggleWishlist(product.id);
+                    toggleWishlist(product);
                   }}
                   className="absolute top-3 right-3 w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-md hover:scale-110 transition z-10"
                 >
                   <span
                     className={`text-xl ${
-                      isWishlisted
+                      wishlisted
                         ? "text-red-500"
                         : "text-gray-700"
                     }`}
                   >
-                    {isWishlisted ? "♥" : "♡"}
+                    {wishlisted ? "♥" : "♡"}
                   </span>
                 </button>
               </div>

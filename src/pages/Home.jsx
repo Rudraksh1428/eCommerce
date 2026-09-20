@@ -63,7 +63,7 @@ const Home = () => {
         </div>
 
         <div className="mt-5 flex justify-end gap-2">
-          {products.slice(0, 3).map((_, index) => (
+          {products.slice(0, 4).map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrent(index)}

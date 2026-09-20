@@ -1,15 +1,14 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import AppRoutes from "./Routes/AppRoute";
-import Footer from "./components/Footer";
+import AppRoute from "./Routes/AppRoute";
+import WishlistProvider from "./context/WishListContext";
 
 const App = () => {
   return (
-    <div>
+    <WishlistProvider>
       <Navbar />
-      <AppRoutes />
-      <Footer />
-    </div>
+      <AppRoute />
+    </WishlistProvider>
   );
 };
 
