@@ -133,9 +133,12 @@ const ProductDetails = () => {
               ) : (
                 <div className="flex-1 flex gap-3">
 
-                  <div className="flex-1 bg-green-600 text-white py-3 rounded-lg font-semibold text-center">
-                    Added to Cart 
-                  </div>
+                  <Link
+  to="/cart"
+  className="flex-1 bg-green-600 text-white py-3 rounded-lg font-semibold text-center hover:bg-green-700 transition"
+>
+ Added to Cart
+</Link>
 
                   <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
 
