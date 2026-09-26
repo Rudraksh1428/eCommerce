@@ -1,8 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { User, Package, Heart, ShoppingCart, MapPin, Phone, Mail } from "lucide-react";
+import {
+  User,
+  Package,
+  Heart,
+  ShoppingCart,
+  MapPin,
+  Phone,
+  Mail,
+} from "lucide-react";
 
 const Profile = () => {
+  const [isEditing, setIsEditing] = useState(false);
+
+  const [profile, setProfile] = useState({
+    name: "Your Name",
+    email: "your@email.com",
+    phone: "+91 XXXXX XXXXX",
+    address: "Your Address",
+  });
+
+  const [formData, setFormData] = useState(profile);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleEdit = () => {
+    setFormData(profile);
+    setIsEditing(true);
+  };
+
+  const handleSave = () => {
+    setProfile(formData);
+    setIsEditing(false);
+  };
+
+  const handleCancel = () => {
+    setFormData(profile);
+    setIsEditing(false);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 px-6 md:px-12 lg:px-20 py-10">
       <div className="max-w-6xl mx-auto">
@@ -28,11 +69,11 @@ const Profile = () => {
               </div>
 
               <h2 className="text-xl font-bold text-gray-900 mt-4">
-                Your Name
+                {profile.name}
               </h2>
 
               <p className="text-gray-500 text-sm mt-1">
-                your@email.com
+                {profile.email}
               </p>
 
             </div>
@@ -73,69 +114,158 @@ const Profile = () => {
 
             <div className="bg-white border border-gray-200 rounded-2xl p-6">
 
-              <h2 className="text-xl font-bold text-gray-900">
-                Personal Information
-              </h2>
+              <div className="flex items-center justify-between">
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-6">
+                <h2 className="text-xl font-bold text-gray-900">
+                  Personal Information
+                </h2>
 
-                <div>
-                  <p className="text-sm text-gray-500">
-                    Full Name
-                  </p>
-
-                  <p className="font-medium text-gray-900 mt-1">
-                    Your Name
-                  </p>
-                </div>
-
-                <div>
-                  <p className="text-sm text-gray-500">
-                    Email
-                  </p>
-
-                  <div className="flex items-center gap-2 mt-1">
-                    <Mail size={16} className="text-gray-500" />
-
-                    <p className="font-medium text-gray-900">
-                      your@email.com
-                    </p>
-                  </div>
-                </div>
-
-                <div>
-                  <p className="text-sm text-gray-500">
-                    Phone
-                  </p>
-
-                  <div className="flex items-center gap-2 mt-1">
-                    <Phone size={16} className="text-gray-500" />
-
-                    <p className="font-medium text-gray-900">
-                      +91 XXXXX XXXXX
-                    </p>
-                  </div>
-                </div>
-
-                <div>
-                  <p className="text-sm text-gray-500">
-                    Address
-                  </p>
-
-                  <div className="flex items-center gap-2 mt-1">
-                    <MapPin size={16} className="text-gray-500" />
-
-                    <p className="font-medium text-gray-900">
-                      Your Address
-                    </p>
-                  </div>
-                </div>
+                {!isEditing && (
+                  <button
+                    onClick={handleEdit}
+                    className="px-4 py-2 bg-black text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition"
+                  >
+                    Edit Profile
+                  </button>
+                )}
 
               </div>
 
-              <button className="mt-6 px-5 py-2.5 bg-black text-white rounded-lg font-medium hover:bg-gray-800 transition">
-                Edit Profile
-              </button>
+              {isEditing ? (
+                <div className="mt-6 space-y-5">
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Full Name
+                    </label>
+
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-black"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Email
+                    </label>
+
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-black"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone
+                    </label>
+
+                    <input
+                      type="text"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-black"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Address
+                    </label>
+
+                    <textarea
+                      name="address"
+                      value={formData.address}
+                      onChange={handleChange}
+                      rows="3"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none focus:ring-2 focus:ring-black resize-none"
+                    />
+                  </div>
+
+                  <div className="flex gap-3">
+
+                    <button
+                      onClick={handleSave}
+                      className="px-5 py-2.5 bg-black text-white rounded-lg font-medium hover:bg-gray-800 transition"
+                    >
+                      Save Changes
+                    </button>
+
+                    <button
+                      onClick={handleCancel}
+                      className="px-5 py-2.5 border border-gray-300 rounded-lg font-medium hover:bg-gray-100 transition"
+                    >
+                      Cancel
+                    </button>
+
+                  </div>
+
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-6">
+
+                  <div>
+                    <p className="text-sm text-gray-500">
+                      Full Name
+                    </p>
+
+                    <p className="font-medium text-gray-900 mt-1">
+                      {profile.name}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="text-sm text-gray-500">
+                      Email
+                    </p>
+
+                    <div className="flex items-center gap-2 mt-1">
+                      <Mail size={16} className="text-gray-500" />
+
+                      <p className="font-medium text-gray-900">
+                        {profile.email}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className="text-sm text-gray-500">
+                      Phone
+                    </p>
+
+                    <div className="flex items-center gap-2 mt-1">
+                      <Phone size={16} className="text-gray-500" />
+
+                      <p className="font-medium text-gray-900">
+                        {profile.phone}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className="text-sm text-gray-500">
+                      Address
+                    </p>
+
+                    <div className="flex items-center gap-2 mt-1">
+                      <MapPin size={16} className="text-gray-500" />
+
+                      <p className="font-medium text-gray-900">
+                        {profile.address}
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              )}
 
             </div>
 
