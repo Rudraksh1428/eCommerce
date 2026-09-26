@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import AppRoute from "./Routes/AppRoute";
 import WishlistProvider from "./context/WishListContext";
 import CartProvider from "./context/CartContext";
-
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -11,6 +11,7 @@ const App = () => {
       <CartProvider>
         <Navbar />
         <AppRoute />
+         <Footer />
       </CartProvider>
     </WishlistProvider>
   );
