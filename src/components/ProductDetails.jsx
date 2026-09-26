@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import products from "../data/Data";
 import { useWishlist } from "../context/WishListContext";
+import { useCart } from "../context/CartContext";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -11,6 +12,13 @@ const ProductDetails = () => {
   );
 
   const { toggleWishlist, isWishlisted } = useWishlist();
+
+  const {
+    addToCart,
+    getCartQuantity,
+    increaseQuantity,
+    decreaseQuantity,
+  } = useCart();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -35,6 +43,8 @@ const ProductDetails = () => {
     );
   }
 
+  const cartQuantity = getCartQuantity(product.id);
+  const stockLeft = product.stock - cartQuantity;
   const wishlisted = isWishlisted(product.id);
 
   return (
@@ -96,11 +106,67 @@ const ProductDetails = () => {
               cart to continue shopping.
             </p>
 
+            {stockLeft > 0 && stockLeft <= 5 && (
+              <p className="text-sm text-orange-600 mt-4">
+                Only {stockLeft} left in stock
+              </p>
+            )}
+
+            {stockLeft <= 0 && (
+              <p className="text-sm text-red-600 mt-4">
+                No more stock available
+              </p>
+            )}
+
             <div className="flex gap-4 mt-8">
 
-              <button className="flex-1 bg-black text-white py-3.5 px-6 rounded-xl font-semibold hover:bg-gray-800 transition">
-                Add to Cart
-              </button>
+              {cartQuantity === 0 ? (
+                <button
+                  onClick={() => addToCart(product)}
+                  disabled={product.stock <= 0}
+                  className="flex-1 bg-black text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition disabled:bg-gray-300 disabled:text-gray-500 disabled:cursor-not-allowed"
+                >
+                  {product.stock <= 0
+                    ? "Out of Stock"
+                    : "Add to Cart"}
+                </button>
+              ) : (
+                <div className="flex-1 flex gap-3">
+
+                  <div className="flex-1 bg-green-600 text-white py-3 rounded-lg font-semibold text-center">
+                    Added to Cart 
+                  </div>
+
+                  <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
+
+                    <button
+                      onClick={() =>
+                        decreaseQuantity(product.id)
+                      }
+                      className="w-11 h-12 text-xl font-semibold hover:bg-gray-100 transition"
+                    >
+                      −
+                    </button>
+
+                    <span className="w-10 text-center font-semibold">
+                      {cartQuantity}
+                    </span>
+
+                    <button
+                      onClick={() =>
+                        increaseQuantity(product.id)
+                      }
+                      disabled={
+                        cartQuantity >= product.stock
+                      }
+                      className="w-11 h-12 text-xl font-semibold hover:bg-gray-100 transition disabled:text-gray-300 disabled:cursor-not-allowed"
+                    >
+                      +
+                    </button>
+
+                  </div>
+                </div>
+              )}
 
               <button
                 onClick={() => toggleWishlist(product)}

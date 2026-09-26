@@ -6,6 +6,7 @@ const products = [
     description: "Classic Analog Watch",
     rating: 4.5,
     price: 2499,
+    stock: 8,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ const products = [
     description: "Wireless Headphones",
     rating: 4.7,
     price: 3999,
+    stock: 6,
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ const products = [
     description: "Running Sneakers",
     rating: 4.6,
     price: 2999,
+    stock: 10,
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ const products = [
     description: "Classic Cotton T-Shirt",
     rating: 4.4,
     price: 799,
+    stock: 15,
   },
   {
     id: 5,
@@ -38,6 +42,7 @@ const products = [
     description: "Casual Denim Jacket",
     rating: 4.5,
     price: 2199,
+    stock: 7,
   },
   {
     id: 6,
@@ -46,6 +51,7 @@ const products = [
     description: "Smartphone",
     rating: 4.8,
     price: 24999,
+    stock: 5,
   },
   {
     id: 7,
@@ -54,6 +60,7 @@ const products = [
     description: "Ceramic Coffee Mug",
     rating: 4.3,
     price: 499,
+    stock: 20,
   },
   {
     id: 8,
@@ -62,6 +69,7 @@ const products = [
     description: "Stylish Sunglasses",
     rating: 4.6,
     price: 1299,
+    stock: 9,
   },
   {
     id: 9,
@@ -70,6 +78,7 @@ const products = [
     description: "Modern Desk Lamp",
     rating: 4.5,
     price: 1599,
+    stock: 12,
   },
   {
     id: 10,
@@ -78,6 +87,7 @@ const products = [
     description: "Sports Running Shoes",
     rating: 4.7,
     price: 3499,
+    stock: 8,
   },
   {
     id: 11,
@@ -86,6 +96,7 @@ const products = [
     description: "Travel Backpack",
     rating: 4.8,
     price: 1899,
+    stock: 6,
   },
   {
     id: 12,
@@ -94,6 +105,7 @@ const products = [
     description: "Noise Cancelling Headphones",
     rating: 4.6,
     price: 5499,
+    stock: 7,
   },
   {
     id: 13,
@@ -102,6 +114,7 @@ const products = [
     description: "Oversized Casual Hoodie",
     rating: 4.5,
     price: 1499,
+    stock: 10,
   },
   {
     id: 14,
@@ -110,6 +123,7 @@ const products = [
     description: "Wireless Mechanical Keyboard",
     rating: 4.7,
     price: 4299,
+    stock: 5,
   },
   {
     id: 15,
@@ -118,6 +132,7 @@ const products = [
     description: "Leather Casual Jacket",
     rating: 4.4,
     price: 2799,
+    stock: 8,
   },
   {
     id: 16,
@@ -126,6 +141,7 @@ const products = [
     description: "Minimal Wall Clock",
     rating: 4.3,
     price: 999,
+    stock: 12,
   },
   {
     id: 17,
@@ -134,6 +150,7 @@ const products = [
     description: "Premium Casual Shirt",
     rating: 4.6,
     price: 1199,
+    stock: 10,
   },
   {
     id: 18,
@@ -142,6 +159,7 @@ const products = [
     description: "Classic Casual Shoes",
     rating: 4.5,
     price: 2499,
+    stock: 9,
   },
   {
     id: 19,
@@ -150,6 +168,7 @@ const products = [
     description: "Digital Camera",
     rating: 4.8,
     price: 32999,
+    stock: 4,
   },
   {
     id: 20,
@@ -158,10 +177,8 @@ const products = [
     description: "Modern Table Chair",
     rating: 4.4,
     price: 4599,
+    stock: 6,
   },
-
-  // 21 - 30
-
   {
     id: 21,
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8hivPs_xaHzdL8322FMBxJ2wJpNAB48MYfz8DhuWlfA&s=10",
@@ -169,6 +186,7 @@ const products = [
     description: "White Casual Sneakers",
     rating: 4.6,
     price: 2799,
+    stock: 11,
   },
   {
     id: 22,
@@ -177,6 +195,7 @@ const products = [
     description: "Slim Fit Casual Shirt",
     rating: 4.4,
     price: 999,
+    stock: 14,
   },
   {
     id: 23,
@@ -185,6 +204,7 @@ const products = [
     description: "Bluetooth Speaker",
     rating: 4.5,
     price: 2499,
+    stock: 8,
   },
   {
     id: 24,
@@ -193,6 +213,7 @@ const products = [
     description: "Luxury Wrist Watch",
     rating: 4.7,
     price: 5999,
+    stock: 5,
   },
   {
     id: 25,
@@ -201,6 +222,7 @@ const products = [
     description: "Modern Table Lamp",
     rating: 4.4,
     price: 1899,
+    stock: 10,
   },
   {
     id: 26,
@@ -209,6 +231,7 @@ const products = [
     description: "Formal White Shirt",
     rating: 4.5,
     price: 1299,
+    stock: 12,
   },
   {
     id: 27,
@@ -217,6 +240,7 @@ const products = [
     description: "Premium Sports Shoes",
     rating: 4.8,
     price: 4499,
+    stock: 6,
   },
   {
     id: 28,
@@ -225,6 +249,7 @@ const products = [
     description: "Wireless Mouse",
     rating: 4.5,
     price: 899,
+    stock: 15,
   },
   {
     id: 29,
@@ -233,6 +258,7 @@ const products = [
     description: "Classic Leather Wallet",
     rating: 4.6,
     price: 1199,
+    stock: 9,
   },
   {
     id: 30,
@@ -241,10 +267,8 @@ const products = [
     description: "Modern Sofa",
     rating: 4.7,
     price: 24999,
+    stock: 3,
   },
-
-  // 31 - 40
-
   {
     id: 31,
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQINa6UcEnzqKsf0lQpYR1JlcMtCw88nJ3hxvpOMjun_w&s=10",
@@ -252,6 +276,7 @@ const products = [
     description: "Everyday Walking Shoes",
     rating: 4.3,
     price: 1999,
+    stock: 13,
   },
   {
     id: 32,
@@ -260,6 +285,7 @@ const products = [
     description: "Tablet",
     rating: 4.6,
     price: 18999,
+    stock: 5,
   },
   {
     id: 33,
@@ -268,6 +294,7 @@ const products = [
     description: "Cotton Casual Shirt",
     rating: 4.5,
     price: 1099,
+    stock: 11,
   },
   {
     id: 34,
@@ -276,6 +303,7 @@ const products = [
     description: "Classic Sunglasses",
     rating: 4.4,
     price: 999,
+    stock: 8,
   },
   {
     id: 35,
@@ -284,6 +312,7 @@ const products = [
     description: "Comfortable Lounge Sofa",
     rating: 4.6,
     price: 29999,
+    stock: 4,
   },
   {
     id: 36,
@@ -292,6 +321,7 @@ const products = [
     description: "High Performance Trainers",
     rating: 4.7,
     price: 3999,
+    stock: 7,
   },
   {
     id: 37,
@@ -300,6 +330,7 @@ const products = [
     description: "Smart Watch",
     rating: 4.7,
     price: 6999,
+    stock: 6,
   },
   {
     id: 38,
@@ -308,6 +339,7 @@ const products = [
     description: "Casual Polo T-Shirt",
     rating: 4.5,
     price: 899,
+    stock: 14,
   },
   {
     id: 39,
@@ -316,6 +348,7 @@ const products = [
     description: "Laptop Backpack",
     rating: 4.7,
     price: 2299,
+    stock: 8,
   },
   {
     id: 40,
@@ -324,10 +357,8 @@ const products = [
     description: "Modern Armchair",
     rating: 4.5,
     price: 8999,
+    stock: 5,
   },
-
-  // 41 - 50
-
   {
     id: 41,
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQcMLH8sjyb5OTccYtv4g5aiARQTQpBZBm6mZ4wNL86A&s=10",
@@ -335,6 +366,7 @@ const products = [
     description: "Classic Black Sneakers",
     rating: 4.6,
     price: 2599,
+    stock: 10,
   },
   {
     id: 42,
@@ -343,6 +375,7 @@ const products = [
     description: "Modern Smartphone",
     rating: 4.7,
     price: 21999,
+    stock: 6,
   },
   {
     id: 43,
@@ -351,6 +384,7 @@ const products = [
     description: "Comfortable Sweatshirt",
     rating: 4.5,
     price: 1399,
+    stock: 9,
   },
   {
     id: 44,
@@ -359,6 +393,7 @@ const products = [
     description: "Leather Card Holder",
     rating: 4.4,
     price: 799,
+    stock: 12,
   },
   {
     id: 45,
@@ -367,6 +402,7 @@ const products = [
     description: "Modern Living Room Chair",
     rating: 4.6,
     price: 7499,
+    stock: 5,
   },
   {
     id: 46,
@@ -375,6 +411,7 @@ const products = [
     description: "Lightweight Running Shoes",
     rating: 4.8,
     price: 3699,
+    stock: 7,
   },
   {
     id: 47,
@@ -383,6 +420,7 @@ const products = [
     description: "Studio Headphones",
     rating: 4.7,
     price: 6499,
+    stock: 6,
   },
   {
     id: 48,
@@ -391,6 +429,7 @@ const products = [
     description: "Women's Casual Dress",
     rating: 4.6,
     price: 1799,
+    stock: 10,
   },
   {
     id: 49,
@@ -399,6 +438,7 @@ const products = [
     description: "Elegant Handbag",
     rating: 4.7,
     price: 2999,
+    stock: 8,
   },
   {
     id: 50,
@@ -407,10 +447,8 @@ const products = [
     description: "Minimal Study Lamp",
     rating: 4.5,
     price: 1399,
+    stock: 11,
   },
-
-  // 51 - 60
-
   {
     id: 51,
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSslHDqTJdKvH5nqVvZj8A81DalC-iUvu5_GZdfY_QUwg&s",
@@ -418,6 +456,7 @@ const products = [
     description: "Premium Casual Sneakers",
     rating: 4.7,
     price: 3299,
+    stock: 9,
   },
   {
     id: 52,
@@ -426,6 +465,7 @@ const products = [
     description: "Laptop Computer",
     rating: 4.8,
     price: 69999,
+    stock: 4,
   },
   {
     id: 53,
@@ -434,6 +474,7 @@ const products = [
     description: "Basic White T-Shirt",
     rating: 4.3,
     price: 599,
+    stock: 15,
   },
   {
     id: 54,
@@ -442,6 +483,7 @@ const products = [
     description: "Fashion Sunglasses",
     rating: 4.5,
     price: 1499,
+    stock: 10,
   },
   {
     id: 55,
@@ -450,6 +492,7 @@ const products = [
     description: "Wooden Dining Chair",
     rating: 4.4,
     price: 3999,
+    stock: 6,
   },
   {
     id: 56,
@@ -458,6 +501,7 @@ const products = [
     description: "Urban Street Sneakers",
     rating: 4.6,
     price: 2899,
+    stock: 8,
   },
   {
     id: 57,
@@ -466,6 +510,7 @@ const products = [
     description: "Portable Power Bank",
     rating: 4.5,
     price: 1299,
+    stock: 12,
   },
   {
     id: 58,
@@ -474,6 +519,7 @@ const products = [
     description: "Winter Leather Jacket",
     rating: 4.7,
     price: 3499,
+    stock: 5,
   },
   {
     id: 59,
@@ -482,6 +528,7 @@ const products = [
     description: "Premium Metal Watch",
     rating: 4.8,
     price: 7499,
+    stock: 4,
   },
   {
     id: 60,
@@ -490,6 +537,7 @@ const products = [
     description: "Modern Home Decor",
     rating: 4.5,
     price: 1999,
+    stock: 7,
   },
 ];
 
