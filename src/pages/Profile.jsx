@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useUser } from "../context/UserContext";
 import { Link } from "react-router-dom";
 import {
   User,
@@ -13,13 +14,7 @@ import {
 const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
 
-  const [profile, setProfile] = useState({
-    name: "Your Name",
-    email: "your@email.com",
-    phone: "+91 XXXXX XXXXX",
-    address: "Your Address",
-  });
-
+ const { profile, setProfile } = useUser();
   const [formData, setFormData] = useState(profile);
 
   const handleChange = (e) => {
