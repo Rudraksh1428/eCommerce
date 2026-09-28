@@ -1,86 +1,22 @@
-import React, { useState } from "react";
-import { useUser } from "../context/UserContext";
+import React from "react";
+import AddressInfo from "../components/checkout/AddressInfo";
 
-const AddressInfo = () => {
-  const { profile } = useUser();
-
-  const [address, setAddress] = useState({
-    name: profile.name,
-    email: profile.email,
-    phone: profile.phone,
-    address: profile.address,
-    city: "",
-    state: "",
-    pincode: "",
-  });
-
-  const handleChange = (e) => {
-    setAddress({
-      ...address,
-      [e.target.name]: e.target.value,
-    });
-  };
-
+const Checkout = () => {
   return (
-    <div>
-      <h2>Delivery Address</h2>
+    <div className="min-h-screen bg-gray-50 px-6 md:px-12 lg:px-20 py-10">
+      <div className="max-w-6xl mx-auto">
 
-      <input
-        type="text"
-        name="name"
-        value={address.name}
-        onChange={handleChange}
-        placeholder="Full Name"
-      />
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+          Checkout
+        </h1>
 
-      <input
-        type="email"
-        name="email"
-        value={address.email}
-        onChange={handleChange}
-        placeholder="Email"
-      />
+        <div className="max-w-3xl">
+          <AddressInfo />
+        </div>
 
-      <input
-        type="text"
-        name="phone"
-        value={address.phone}
-        onChange={handleChange}
-        placeholder="Phone"
-      />
-
-      <textarea
-        name="address"
-        value={address.address}
-        onChange={handleChange}
-        placeholder="Address"
-      />
-
-      <input
-        type="text"
-        name="city"
-        value={address.city}
-        onChange={handleChange}
-        placeholder="City"
-      />
-
-      <input
-        type="text"
-        name="state"
-        value={address.state}
-        onChange={handleChange}
-        placeholder="State"
-      />
-
-      <input
-        type="text"
-        name="pincode"
-        value={address.pincode}
-        onChange={handleChange}
-        placeholder="Pincode"
-      />
+      </div>
     </div>
   );
 };
 
-export default AddressInfo;
+export default Checkout;

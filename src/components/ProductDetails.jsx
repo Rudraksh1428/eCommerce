@@ -137,7 +137,7 @@ const ProductDetails = () => {
   to="/cart"
   className="flex-1 bg-green-600 text-white py-3 rounded-lg font-semibold text-center hover:bg-green-700 transition"
 >
- Added to Cart
+Check Cart
 </Link>
 
                   <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
