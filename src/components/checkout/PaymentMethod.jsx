@@ -1,39 +1,52 @@
-import React, { useState } from "react";
+import React from "react";
 
-const PaymentMethod = ({ paymentMethod, setPaymentMethod }) => {
-  const [upiMethod, setUpiMethod] = useState("");
+const PaymentMethod = ({
+  paymentMethod,
+  setPaymentMethod,
+  upiMethod,
+  setUpiMethod,
+}) => {
+  const handlePaymentChange = (method) => {
+    setPaymentMethod(method);
+
+    if (method !== "upi") {
+      setUpiMethod("");
+    }
+  };
 
   return (
-    <div className="bg-white border border-gray-200 rounded-2xl p-6 mt-6">
+    <div className="p-0">
       <h2 className="text-xl font-bold text-gray-900 mb-6">Payment Method</h2>
 
       <div className="space-y-4">
-        <label className="flex items-center gap-3 border border-gray-200 rounded-lg p-4 cursor-pointer">
+        <label className="flex items-center gap-3 border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-gray-400 transition">
           <input
             type="radio"
             name="paymentMethod"
             value="cod"
             checked={paymentMethod === "cod"}
-            onChange={(e) => setPaymentMethod(e.target.value)}
+            onChange={() => handlePaymentChange("cod")}
           />
+
           <span className="font-medium">Cash on Delivery</span>
         </label>
 
         <div>
-          <label className="flex items-center gap-3 border border-gray-200 rounded-lg p-4 cursor-pointer">
+          <label className="flex items-center gap-3 border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-gray-400 transition">
             <input
               type="radio"
               name="paymentMethod"
               value="upi"
               checked={paymentMethod === "upi"}
-              onChange={(e) => setPaymentMethod(e.target.value)}
+              onChange={() => handlePaymentChange("upi")}
             />
+
             <span className="font-medium">UPI</span>
           </label>
 
           {paymentMethod === "upi" && (
             <div className="mt-3 ml-8 border border-gray-200 rounded-lg p-4">
-              <h3 className="font-medium mb-3">Select UPI App</h3>
+              <h3 className="font-medium mb-4">Select UPI App</h3>
 
               <div className="space-y-3">
                 <label className="flex items-center gap-3 cursor-pointer">
@@ -42,8 +55,9 @@ const PaymentMethod = ({ paymentMethod, setPaymentMethod }) => {
                     name="upiMethod"
                     value="gpay"
                     checked={upiMethod === "gpay"}
-                    onChange={(e) => setUpiMethod(e.target.value)}
+                    onChange={() => setUpiMethod("gpay")}
                   />
+
                   <span>Google Pay</span>
                 </label>
 
@@ -53,8 +67,9 @@ const PaymentMethod = ({ paymentMethod, setPaymentMethod }) => {
                     name="upiMethod"
                     value="bhim"
                     checked={upiMethod === "bhim"}
-                    onChange={(e) => setUpiMethod(e.target.value)}
+                    onChange={() => setUpiMethod("bhim")}
                   />
+
                   <span>BHIM</span>
                 </label>
 
@@ -64,8 +79,9 @@ const PaymentMethod = ({ paymentMethod, setPaymentMethod }) => {
                     name="upiMethod"
                     value="phonepe"
                     checked={upiMethod === "phonepe"}
-                    onChange={(e) => setUpiMethod(e.target.value)}
+                    onChange={() => setUpiMethod("phonepe")}
                   />
+
                   <span>PhonePe</span>
                 </label>
               </div>
@@ -73,14 +89,15 @@ const PaymentMethod = ({ paymentMethod, setPaymentMethod }) => {
           )}
         </div>
 
-        <label className="flex items-center gap-3 border border-gray-200 rounded-lg p-4 cursor-pointer">
+        <label className="flex items-center gap-3 border border-gray-200 rounded-lg p-4 cursor-pointer hover:border-gray-400 transition">
           <input
             type="radio"
             name="paymentMethod"
             value="card"
             checked={paymentMethod === "card"}
-            onChange={(e) => setPaymentMethod(e.target.value)}
+            onChange={() => handlePaymentChange("card")}
           />
+
           <span className="font-medium">Credit / Debit Card</span>
         </label>
       </div>

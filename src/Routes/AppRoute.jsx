@@ -10,6 +10,7 @@ import Profile from "../pages/Profile";
 import Checkout from "../pages/Checkout";
 import Payment from "../pages/Payment";
 
+
 const AppRoute = () => {
   return (
     <>
